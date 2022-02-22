@@ -1,0 +1,35 @@
+.newPost form {
+    margin-top: 25px;
+    display: flex;
+}
+
+.newPost form textarea {
+    display: block;
+    flex-basis: 85%;
+    padding: 8px 0 8px 10px;
+    /*border: none;*/
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100px;
+    resize: none;
+    outline: none;
+    -moz-appearance: none;
+}
+
+.newPost form button {
+    display: block;
+    flex-basis: 15%;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    background-color: #1c3faa;
+    font-size: 18px;
+    color: white;
+    transition: background-color .2s;
+}
+
+.newPost form button:hover {
+    background-color: #295af0;
+    transition: background-color .2s;
+}

@@ -1,0 +1,27 @@
+.statusContainer {
+    margin-top: 15px;
+}
+
+.statusContainer .statusText{
+    cursor: pointer;
+}
+
+.statusContainer .statusText p{
+    margin: 0;
+}
+
+.statusContainer .statusCreator{
+
+}
+
+.statusContainer .statusCreator input{
+    margin-bottom: -1px;
+    padding: 6px 0 6px 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(118, 118, 118);
+    resize: none;
+    outline: none;
+    -moz-appearance: none;
+}

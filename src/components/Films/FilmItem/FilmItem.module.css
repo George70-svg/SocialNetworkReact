@@ -1,0 +1,20 @@
+.filmItem {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    margin: 20px 20px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.filmItem img {
+    width: 100%;
+    flex-grow: 2;
+}
+
+.filmItem .rating {
+    color: white;
+    font-size: 16px;
+    background-color: #295af0;
+    text-align: center;
+    padding: 5px 0;
+}

@@ -1,0 +1,68 @@
+.loginContainer {
+    margin: 0 auto;
+    padding: 25px;
+    width: 320px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.loginContainer .formArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContainer .formArea .inputContainer {
+    margin-top: 15px;
+}
+
+.loginContainer .formArea .inputContainer .text {
+    margin-top: 5px;
+    padding: 8px 0 8px 10px;
+    border: 1px solid #9b9e9c;
+    border-radius: 10px;
+    height: 15px;
+    resize: none;
+    outline: none;
+    -moz-appearance: none;
+}
+
+.loginContainer .formArea .inputContainer .error {
+    border-color: red;
+}
+
+.loginContainer .formArea .apiErrors {
+
+}
+
+.loginContainer .formArea .apiErrors p {
+    color: darkred;
+}
+
+.loginContainer .formArea .buttonContainer button {
+    margin-top: 15px;
+    width: 100px;
+    padding: 5px;
+    display: block;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #1c3faa;
+    font-size: 16px;
+    transition: background-color .2s;
+}
+
+.loginContainer .formArea .buttonContainer .normal {
+    background-color: #1c3faa;
+    color: white;
+}
+
+.loginContainer .formArea .buttonContainer .normal:hover {
+    background-color: #295af0;
+    color: white;
+}
+
+.loginContainer .formArea .buttonContainer .error {
+    background-color: #9b9e9c;
+    color: #404040;
+}

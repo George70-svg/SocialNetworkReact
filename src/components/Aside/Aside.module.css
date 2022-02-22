@@ -1,0 +1,32 @@
+.aside {
+  grid-area: aside;
+  padding-top: 25px; 
+}
+
+.aside a {
+  display: block;
+  cursor: pointer;
+  margin: 10px auto 10px 25px;
+  padding: 10px 10px 10px 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.aside a:hover {
+  background-color: #f1f2f6;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  color: #1c3faa;
+}
+
+.aside .active {
+  background-color: #f1f2f6;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  color: #1c3faa;
+}
+
+.aside .fiendsList {
+  margin-top: 50px;
+}
+

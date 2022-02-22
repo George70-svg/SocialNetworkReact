@@ -1,0 +1,17 @@
+.preloader {
+    margin: 0 auto;
+}
+
+.preloader img {
+    position: absolute;
+    width: 150px;
+    top: 20%;
+    left: 50%;
+    transform: translate(0, 0);
+}
+
+.usersContainer .users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -1,0 +1,52 @@
+.addContainer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #295af0;
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 9px 4px #9b9e9c;
+}
+
+.addContainer input {
+    display: inline-block;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 5px;
+    border: none;
+    border-right: 1px solid #9b9e9c;
+    outline: none;
+}
+
+.addContainer .filmName {
+    flex-basis: 15%;
+}
+
+.addContainer .filmPoster {
+    flex-basis: 65%;
+    flex-grow: 2;
+}
+
+.addContainer .filmRating {
+    flex-basis: 5%;
+}
+
+.addContainer button {
+    display: inline-block;
+    flex-basis: 10%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #404040;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    transition: background-color .2s;
+}
+
+.addContainer button:hover {
+    background-color: #e5e1e3;
+    transition: background-color .2s;
+}
+

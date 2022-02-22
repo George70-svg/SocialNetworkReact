@@ -1,0 +1,17 @@
+.dialogsContainer {
+    display: flex;
+    min-height: 87vh;
+    border: 1px solid #babbbf;
+    background-color: white;
+}
+
+.dialogsContainer .dialogs {
+    /*height: 100%;*/
+    flex-basis: 33%;
+    border-right: 1px solid #babbbf;
+}
+
+.dialogsContainer .messeges {
+    /*height: 100%;*/
+    flex-basis: 67%;
+}

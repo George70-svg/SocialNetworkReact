@@ -1,0 +1,72 @@
+.paginatorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.paginatorContainer button.active {
+    height: 31px;
+    width: 70px;
+    border: 1px solid black;
+    color: white;
+    background-color: #295af0;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.paginatorContainer button.disabled {
+    height: 31px;
+    width: 70px;
+    border: 1px solid black;
+    background-color: #bababa;
+    color: black;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+.paginatorContainer button.disabled:hover {
+    background-color: #bababa;
+    color: black;
+}
+
+.paginatorContainer button:hover {
+    height: 31px;
+    width: 70px;
+    border: 1px solid black;
+    color: white;
+    background-color: #1c43b8;
+    transition: background-color .2s;
+}
+
+.paginatorContainer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.paginatorContainer ul .unactive {
+    cursor: pointer;
+    display: inline-block;
+    margin: 2px;
+    padding: 2px;
+    min-width: 35px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid black
+}
+
+.paginatorContainer ul .active {
+    cursor: pointer;
+    display: inline-block;
+    margin: 2px;
+    padding: 2px;
+    min-width: 35px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+    background-color: #295af0;
+}

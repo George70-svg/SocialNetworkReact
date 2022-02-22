@@ -1,0 +1,15 @@
+.item {
+    margin: 5px;
+}
+
+.item .avatar {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.item .name {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+}

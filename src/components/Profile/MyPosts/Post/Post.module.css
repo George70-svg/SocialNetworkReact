@@ -1,0 +1,48 @@
+.post {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 10px 0px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.post .avatar {
+    align-self: flex-start;
+    margin: 10px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post .postInfo {
+    padding: 10px;
+}
+
+.post .postInfo .text {
+    display: inline-block;
+    font-size: 18px;
+    padding-right: 20px;
+}
+
+.post .postInfo .likes {
+    display: flex;
+    align-items: center;
+}
+
+.post .postInfo .likes img {
+    display: inline-block;
+    height: 30px;
+}
+
+.post .postInfo .likes p {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 0 0 5px;
+}
+
+.post .deletePost {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

@@ -1,0 +1,35 @@
+.preloaderProfile img {
+    display: flex;
+    width: 100px;
+    position: unset;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+}
+
+.avatar {
+    display: flex;
+}
+
+.avatar img {
+    height: 100px;
+}
+
+.avatar .userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 25px;
+}
+
+.avatar .userInfo .name {
+
+}
+
+.avatar .userInfo .status {
+    margin-top: 20px;
+}
+
+.avatar .userInfo .vkontakte {
+    margin-top: 15px;
+}
