@@ -66,3 +66,24 @@
     background-color: #9b9e9c;
     color: #404040;
 }
+
+.loginContainer .helpInfo {
+    border: 1px solid grey;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.loginContainer .helpInfo .userData {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    color: #1c3faa;
+}
+
+.loginContainer .helpInfo .userData span {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    color: #1c3faa;
+}

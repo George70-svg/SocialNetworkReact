@@ -95,6 +95,12 @@ export const LoginForm = (props) => {
                         >login</button>}
                 </div>
             </form>
+            <div className={classes.helpInfo}>
+                <p>To use the social network in test mode without registration, use:</p>
+                <p className={classes.userData}>login: <span>free@samuraijs.com</span></p>
+                <p className={classes.userData}>password: <span>free</span></p>
+                <p>To register on the social network, you need to register on the <a href="https://social-network.samuraijs.com">API site</a></p>
+            </div>
         </div>
     )
 }
