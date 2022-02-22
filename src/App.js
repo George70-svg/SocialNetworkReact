@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {connect, Provider} from "react-redux";
 import './App.css';
@@ -68,13 +68,13 @@ let AppContainer =  compose(
 
 const SocialNetworkApp = (props) => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename={process.env.PUBLIC_URL}>
             <Provider store={store}>
                 <React.StrictMode>
                     <AppContainer/>
                 </React.StrictMode>
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
