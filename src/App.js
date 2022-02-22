@@ -68,7 +68,7 @@ let AppContainer =  compose(
 
 const SocialNetworkApp = (props) => {
     return (
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
             <Provider store={store}>
                 <React.StrictMode>
                     <AppContainer/>
