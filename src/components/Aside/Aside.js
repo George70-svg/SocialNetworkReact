@@ -17,12 +17,6 @@ const Aside = (props) => {
             <NavLink to="/users" activeClassName={classes.active}>
                 <div>Users</div>
             </NavLink>
-            <NavLink to="/news" activeClassName={classes.active}>
-                <div>News</div>
-            </NavLink>
-            <NavLink to="/music" activeClassName={classes.active}>
-                <div>Music</div>
-            </NavLink>
             <NavLink to="/setting" activeClassName={classes.active}>
                 <div>Setting</div>
             </NavLink>

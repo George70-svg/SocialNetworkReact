@@ -1,4 +1,4 @@
-import classes from "./LoginContainer.module.css"
+import classes from "./LoginForm.module.css"
 import {useFormik} from "formik";
 
 export const LoginForm = (props) => {
@@ -8,6 +8,7 @@ export const LoginForm = (props) => {
             email: "",
             password: "",
             checkbox: true,
+            captcha: "",
         },
 
         onSubmit: (values, submitProps) => {
@@ -15,6 +16,7 @@ export const LoginForm = (props) => {
                 email: values.email,
                 password: values.password,
                 rememberMe: values.checkbox,
+                captcha: values.captcha,
             }
             props.onSubmit(formData, submitProps.setStatus)
             submitProps.resetForm()
@@ -39,13 +41,13 @@ export const LoginForm = (props) => {
 
     let apiErrors
     if(formik.status) {
-        //console.log(formik.status.error)
         apiErrors = formik.status.error.map((item, index) => <p key={index}>{item}</p>)
     }
 
     return(
         <div className={classes.loginContainer}>
             <form onSubmit={formik.handleSubmit} className={classes.formArea}>
+
                 <div className={classes.inputContainer}>
                     <label htmlFor="email">Login</label>
                     <br/>
@@ -59,6 +61,7 @@ export const LoginForm = (props) => {
                            placeholder={formik.errors.email && formik.touched.email ? formik.errors.email : null}
                     />
                 </div>
+
                 <div className={classes.inputContainer}>
                     <label htmlFor="password">Password</label>
                     <br/>
@@ -72,9 +75,11 @@ export const LoginForm = (props) => {
                            placeholder={formik.errors.password && formik.touched.password ? formik.errors.password : null}
                     />
                 </div>
+
                 <div className={classes.apiErrors}>
                     {apiErrors ? apiErrors : null}
                 </div>
+
                 <div className={classes.inputContainer}>
                     <label htmlFor="checkbox">Remember me</label>
                     <input type="checkbox"
@@ -85,15 +90,31 @@ export const LoginForm = (props) => {
                            value={formik.values.checkbox}
                     />
                 </div>
+
+                {props.captchaURL &&
+                <div className={classes.inputContainer}>
+                    <label htmlFor="captcha">Captcha</label>
+                    <br/>
+                    <input type="text"
+                           id="captcha"
+                           name="captcha"
+                           onChange={formik.handleChange}
+                           onBlur={formik.handleBlur}
+                           value={formik.values.captcha}
+                           className={classes.text}
+                    />
+                </div>
+                }
+                {props.captchaURL && <img src={props.captchaURL} alt="captcha"/>}
+
                 <div className={classes.buttonContainer}>
                     {props.isAuth
                         ? <button type="submit" className={classes.normal}>logout</button>
-                        : <button /*disabled={formik.errors}*/
-                                  type="submit"
+                        : <button type="submit"
                                   className={classes.normal}
-                                  /*className={(formik.errors.email && formik.errors.password) ? classes.error : classes.normal}*/
                         >login</button>}
                 </div>
+
             </form>
             <div className={classes.helpInfo}>
                 <p>To use the social network in test mode without registration, use:</p>

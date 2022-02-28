@@ -9,10 +9,39 @@
 
 .avatar {
     display: flex;
+    position: relative;
+}
+
+.avatar .optionsAvatar {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 35px;
+    cursor: pointer;
+    transition: filter .3s;
+    filter: brightness(.7);
+}
+
+.avatar .optionsAvatar:hover {
+    filter: brightness(1) saturate(3);
+    transition: filter .3s;
+}
+
+.avatar .optionsAvatar label {
+    cursor: pointer;
+}
+
+.avatar .optionsAvatar label img {
+    width: 35px;
+    height: 35px;
+}
+
+.avatar .optionsAvatar input {
+    display: none;
 }
 
 .avatar img {
-    height: 100px;
+    height: 150px;
 }
 
 .avatar .userInfo {
@@ -26,10 +55,14 @@
 
 }
 
+.avatar .userInfo .aboutMe {
+
+}
+
 .avatar .userInfo .status {
-    margin-top: 20px;
+
 }
 
 .avatar .userInfo .vkontakte {
-    margin-top: 15px;
+
 }

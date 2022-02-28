@@ -1,4 +1,10 @@
 import {usersAPI} from "../API/api";
+import avatar1 from '../img/commonAvatar/8bb1e6f277f5325cdf4bb7c24a7414c4.jpg'
+import avatar2 from '../img/commonAvatar/3kthMb.md.jpg'
+import avatar3 from '../img/commonAvatar/2796060407.jpg'
+import avatar5 from '../img/commonAvatar/f769a2a14bda4462b1d3689647b508ea.png'
+import avatar6 from '../img/commonAvatar/unnamed.jpg'
+import avatar9 from '../img/commonAvatar/1636441921_10-papik-pro-p-milie-risunki-cheloveka-10.jpg'
 
 const SET_TOTAL_USERS_COUNT = "friendsReducer/SET_TOTAL_USERS_COUNT"
 
@@ -7,37 +13,37 @@ let initionalState = {
     friendsList: [
         {
             id: "1",
-            avatar: "https://pbs.twimg.com/media/Dz2w7QfX4AASPzL.jpg",
+            avatar: avatar9,
             name: "Яна"
         },
 
         {
             id: "3",
-            avatar: "https://pbs.twimg.com/profile_images/1260892940165165056/DbnIwfQn_400x400.jpg",
+            avatar: avatar6,
             name: "Вова"
         },
 
         {
             id: "4",
-            avatar: "https://img.nickpic.host/3kthMb.md.jpg",
+            avatar: avatar2,
             name: "Роман"
         },
 
         {
             id: "5",
-            avatar: "https://i.pinimg.com/originals/8b/b1/e6/8bb1e6f277f5325cdf4bb7c24a7414c4.jpg",
+            avatar: avatar1,
             name: "Мария"
         },
 
         {
             id: "6",
-            avatar: "https://i01.fotocdn.net/s122/e7191cad2f5d6b50/user_l/2796060407.jpg",
+            avatar: avatar3,
             name: "Софи"
         },
 
         {
             id: "7",
-            avatar: "https://media.sketchfab.com/avatars/ef6824b2e26b4f0d935be8635003e864/f769a2a14bda4462b1d3689647b508ea.png",
+            avatar: avatar5,
             name: "Максим"
         },
     ]

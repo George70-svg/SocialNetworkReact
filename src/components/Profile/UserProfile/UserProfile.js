@@ -1,9 +1,18 @@
 import classes from "./UserProfile.module.css";
 import Preloader from "../../../common/Preloader/preloader";
 import {ProfileStatus} from "./ProfileStatus/ProfileStatus";
+import optionImg from "../../../img/icon/option.png"
+import Contacts from "./Contacts/Contacts";
 
 const UserProfile = (props) => {
-    let commonAvatar = "https://i08.fotocdn.net/s123/1a152e8b84fe2ebe/user_l/2811351276.jpg"
+    let commonAvatar = props.commonAvatar
+    let optionImage = optionImg
+
+    const changeAvatar = (event) => {
+        if(event.target.files.length) {
+            props.setProfileAvatar(event.target.files[0])
+        }
+    }
 
     if(!props.profile) {
         return (
@@ -15,12 +24,23 @@ const UserProfile = (props) => {
 
     return(
         <div className={classes.avatar}>
-            <img src={props.profile.photos.small ? props.profile.photos.small : commonAvatar} alt="avatar"/>
+            {(props.isOwner) ?
+                <div className={classes.optionsAvatar}>
+                    <label htmlFor="inputFileAvatar"><img src={optionImage} alt="option"/></label>
+                    <input type="file" id="inputFileAvatar" onChange={changeAvatar}/>
+                </div> : null
+            }
+
+            <img src={props.profile.photos.large ? props.profile.photos.large : commonAvatar} alt="avatar"/>
             <div className={classes.userInfo}>
                 <div className={classes.name}>Имя: {props.profile.fullName}</div>
-                {/*<div className={classes.status}>Статус: {props.profile.aboutMe}</div>*/}
                 <ProfileStatus status={props.status || "*-*-*-*"} updateProfileStatus={props.updateProfileStatus}/>
-                <div className={classes.vkontakte}>Вконтакте: <a href={props.profile.contacts.vk}>{props.profile.contacts.vk}</a></div>
+                <div className={classes.aboutMe}>Обо мне: {props.profile.aboutMe}</div>
+                <Contacts contacts={props.profile.contacts}/>
+                <div className={classes.lookingForAJob}>Ищу работу: {props.profile.lookingForAJob ? 'Да' : 'Нет'}</div>
+                <div className={classes.lookingForAJobDescription}>
+                    Мои навыки: {props.profile.lookingForAJobDescription ? props.profile.lookingForAJobDescription : 'Нет'}
+                </div>
             </div>
         </div>
     )

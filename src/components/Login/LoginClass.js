@@ -3,7 +3,7 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import classes from "./Login.module.css"
-import {LoginForm} from "../../common/LoginContainer/LoginContainer";
+import {LoginForm} from "../../common/LoginForm/LoginForm";
 import {login, logout} from "../../redux/authReducer";
 import {getAuthStatus} from "../../redux/selectors/authSelector";
 

@@ -3,9 +3,9 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import classes from "./Login.module.css"
-import {LoginForm} from "../../common/LoginContainer/LoginContainer";
-import {login, logout} from "../../redux/authReducer";
-import {getAuthStatus} from "../../redux/selectors/authSelector";
+import {LoginForm} from "../../common/LoginForm/LoginForm";
+import {login, logout, getCaptchaUrl} from "../../redux/authReducer";
+import {getAuthStatus, getCaptchaUrlSelector} from "../../redux/selectors/authSelector";
 
 const Login = (props) => {
     let [isAuth, setAuth] = useState(props.isAuth)
@@ -29,13 +29,14 @@ const Login = (props) => {
     return (
         <div className={classes.login}>
             <h2>Login</h2>
-            <LoginForm onSubmit={onSubmit} isAuth={isAuth}/>
+            <LoginForm onSubmit={onSubmit} isAuth={isAuth} captchaURL={props.captchaUrl}/>
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
     isAuth: getAuthStatus(state),
+    captchaUrl: getCaptchaUrlSelector(state),
 })
 
 const actionCreators = {

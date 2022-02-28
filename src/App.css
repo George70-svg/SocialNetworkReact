@@ -1,5 +1,6 @@
 .app-wrapper {
   width: 100%;
+  min-height: 100vh;
   background-color: #1c3faa;
   display: grid;
   grid-template-areas: 'header header ' 'aside main';

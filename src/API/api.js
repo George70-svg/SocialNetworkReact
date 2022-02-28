@@ -43,6 +43,22 @@ export const profileAPI = {
     updateProfileStatus(status) {
         return instance.put(`/profile/status`, {status: status})
     },
+
+    setAvatar(imgFile) {
+        const formData = new FormData();
+        formData.append("image", imgFile)
+
+        return instance.put(`/profile/photo`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+    },
+
+    setProfileInfo(formData) {
+        return instance.put(`/profile`, formData)
+            .then(response => console.log(response.data))
+    }
 }
 
 export const authAPI = {
@@ -56,6 +72,7 @@ export const authAPI = {
             email: loginData.email,
             password: loginData.password,
             rememberMe: loginData.rememberMe,
+            captcha: loginData.captcha,
         })
     },
 
@@ -64,3 +81,9 @@ export const authAPI = {
     }
 }
 
+export const securityAPI = {
+    getCaptchaURL() {
+        return instance.get('/security/get-captcha-url')
+            .then(response => response.data)
+    }
+}
