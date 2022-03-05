@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, HashRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, withRouter, Switch, Redirect} from "react-router-dom";
 import {compose} from "redux";
 import {connect, Provider} from "react-redux";
 import './App.css';
@@ -19,8 +19,18 @@ const SettingWrapper = React.lazy(() => import('./components/Setting/SettingWrap
 
 class App extends React.Component {
 
+    catchAllErrors = (promiseRejectionEvent) => {
+        alert("Внимание: Необработанная ошибка Promise. Позор мне! Причина: " + promiseRejectionEvent.reason);
+        console.log("Необработанная ошибка Promise." + promiseRejectionEvent);
+    }
+
     componentDidMount() {
         this.props.initialization()
+        window.addEventListener("unhandledrejection", this.catchAllErrors)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllErrors)
     }
 
     render() {
@@ -33,12 +43,16 @@ class App extends React.Component {
                 <HeaderWrapper/>
                 <AsideWrapper/>
                 <div className="main">
-                    <Route path="/dialogs" render={() => withSuspense(<DialogsWrapper/>)}/>
-                    <Route path="/profile/:userId?" render={() => withSuspense(<ProfileWrapper/>)}/>
-                    <Route path="/films" render={() => withSuspense(<FilmsWrapper/>)}/>
-                    <Route path="/users" render={() => withSuspense(<UsersWrapper/>)}/>
-                    <Route path="/setting" render={() => withSuspense(<SettingWrapper/>)}/>
-                    <Route path="/login" render={() => <Login/>}/>
+                    <Switch>
+                        <Route exact path="/" render={() => <Redirect to="/profile"/>}/>
+                        <Route path="/dialogs" render={() => withSuspense(<DialogsWrapper/>)}/>
+                        <Route path="/profile/:userId?" render={() => withSuspense(<ProfileWrapper/>)}/>
+                        <Route path="/films" render={() => withSuspense(<FilmsWrapper/>)}/>
+                        <Route path="/users" render={() => withSuspense(<UsersWrapper/>)}/>
+                        <Route path="/setting" render={() => withSuspense(<SettingWrapper/>)}/>
+                        <Route path="/login" render={() => <Login/>}/>
+                        <Route path="*" render={() => <div>404 NOT FOUND</div>}/>
+                    </Switch>
                 </div>
             </div>
         )
@@ -53,7 +67,7 @@ const actionCreators = {
     initialization
 }
 
-let AppContainer =  compose(
+let AppContainer = compose(
     withRouter,
     connect(mapStateToProps, actionCreators)
 )(App)
