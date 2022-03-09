@@ -19,10 +19,10 @@ const SettingWrapper = React.lazy(() => import('./components/Setting/SettingWrap
 
 class App extends React.Component {
 
-    catchAllErrors = (promiseRejectionEvent) => {
+    /*catchAllErrors = (promiseRejectionEvent) => {
         alert("Внимание: Необработанная ошибка Promise. Позор мне! Причина: " + promiseRejectionEvent.reason);
         console.log("Необработанная ошибка Promise." + promiseRejectionEvent);
-    }
+    }*/
 
     componentDidMount() {
         this.props.initialization()
